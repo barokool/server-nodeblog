@@ -14,10 +14,6 @@ dotenv.config()
 app.use(express.json())
 app.use(cors())
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-}
-
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
